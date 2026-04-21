@@ -1,6 +1,6 @@
 export default function Guarantee() {
   return (
-    <section className="section-py" style={{ background: '#FFF', borderTop: '1px solid rgba(0,0,0,0.05)', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
+    <section className="relative" style={{ background: '#FFF', borderBottom: '1px solid rgba(0,0,0,0.05)', padding: '3rem 0 6rem 0' }}>
       <div className="container">
         <div className="grid-2" style={{ alignItems: 'center', background: 'var(--color-bg-light)', borderRadius: '24px', padding: '3rem', border: '1px solid rgba(0,45,114,0.1)' }}>
           

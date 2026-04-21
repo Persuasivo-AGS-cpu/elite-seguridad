@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Hero from './components/Hero';
 import TrustBar from './components/TrustBar';
-import PainPoints from './components/PainPoints';
+import Benefits from './components/Benefits';
 import Solutions from './components/Solutions';
 import Mechanism from './components/Mechanism';
 import VisualEvidence from './components/VisualEvidence';
@@ -48,6 +48,24 @@ function App() {
     return () => observer.disconnect();
   }, [currentHash]);
 
+  // UTM Preserver Protocol for Traffic Alignment
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const utmString = searchParams.toString();
+    
+    if (utmString) {
+      setTimeout(() => {
+        document.querySelectorAll('a[href^="https://wa.me"]').forEach(link => {
+          const baseHref = link.getAttribute('href');
+          if (!baseHref.includes('UTM_DATA')) {
+            const separator = baseHref.includes('?') ? '%0A%0A[UTM_DATA: ' : '?text=[UTM_DATA: ';
+            link.setAttribute('href', baseHref + separator + encodeURIComponent(utmString) + ']');
+          }
+        });
+      }, 500);
+    }
+  }, [currentHash]);
+
   const isPrivacyBlock = currentHash === '#aviso-privacidad';
   const isTermsBlock = currentHash === '#terminos';
   const isLegalView = isPrivacyBlock || isTermsBlock;
@@ -68,8 +86,8 @@ function App() {
           {/* 2. Social Proof */}
           <TrustBar />
           
-          {/* 3. The Problem (Pain Points) */}
-          <PainPoints />
+          {/* 3. The Solution / Benefits */}
+          <Benefits />
           
           {/* 4. Value Proposition */}
           <Solutions />

@@ -3,7 +3,7 @@ export default function TrustBar() {
     <section style={{ 
       background: '#F1F5F9', /* Crisp light corporate grey */
       borderBottom: '1px solid rgba(0, 45, 114, 0.05)',
-      padding: '1.5rem 0',
+      padding: '1.2rem 0',
       position: 'relative',
       overflow: 'hidden'
     }}>

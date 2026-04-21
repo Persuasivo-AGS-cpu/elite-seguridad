@@ -2,9 +2,12 @@ import { useState } from 'react';
 
 export default function ConversionFooter() {
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', need: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    setIsSubmitting(true);
     
     // 1. Silent backend submission via FormSubmit AJAX to Jose Luis
     fetch("https://formsubmit.co/ajax/Joseluis.perezaguirre@gmail.com", {
@@ -25,6 +28,9 @@ export default function ConversionFooter() {
     // 2. Immediate transparent redirect to WhatsApp for the customer
     const encodedMessage = encodeURIComponent(`Hola, soy ${formData.name}. Necesito proteger: ${formData.need}. Mi correo es: ${formData.email} y mi número es: ${formData.phone}`);
     window.open(`https://wa.me/528120295749?text=${encodedMessage}`, '_blank');
+
+    // 3. Reset form state after a short delay
+    setTimeout(() => setIsSubmitting(false), 3000);
   };
 
   return (
@@ -66,82 +72,91 @@ export default function ConversionFooter() {
 
           <div>
             <div className="glass-panel" style={{ padding: '3rem', background: '#FFFFFF', border: '1px solid rgba(0,45,114,0.08)', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.05)' }}>
-              <h3 style={{ marginBottom: '0.5rem', fontSize: '1.8rem', color: 'var(--color-brand-blue)' }}>Pide tu Cotización</h3>
-              <p style={{ color: '#64748B', marginBottom: '2rem', fontSize: '0.95rem' }}>Ingresa tus datos y hablemos hoy mismo.</p>
+              
+              <div style={{ marginBottom: '2rem' }}>
+                <h3 style={{ marginBottom: '0.5rem', fontSize: '1.8rem', color: 'var(--color-brand-blue)' }}>Pide tu Cotización</h3>
+                <p style={{ color: '#64748B', margin: 0, fontSize: '0.95rem' }}>Ingresa tus datos y hablemos hoy mismo.</p>
+              </div>
               
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
-                
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                  <label htmlFor="formName" style={{ fontSize: '0.85rem', color: '#475569', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Nombre Completo
-                  </label>
-                  <input 
-                    id="formName"
-                    type="text" 
-                    required
-                    style={{ background: '#F8FAFC', border: '1px solid rgba(0,45,114,0.1)', padding: '1rem', borderRadius: '8px', color: '#334155', fontSize: '1rem', outline: 'none', transition: 'border-color 0.3s' }}
-                    onFocus={e => e.target.style.borderColor = 'var(--color-accent)'}
-                    onBlur={e => e.target.style.borderColor = 'rgba(0,45,114,0.1)'}
-                    onChange={e => setFormData({...formData, name: e.target.value})}
-                  />
-                </div>
-
-                <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                  <div style={{ flex: '1 1 min(100%, 200px)', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                    <label htmlFor="formPhone" style={{ fontSize: '0.85rem', color: '#475569', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                      Número Celular (WhatsApp)
+                  
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                    <label htmlFor="formName" style={{ fontSize: '0.85rem', color: '#475569', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      Nombre Completo
                     </label>
                     <input 
-                      id="formPhone"
-                      type="tel" 
+                      id="formName"
+                      type="text" 
                       required
-                      style={{ background: '#F8FAFC', border: '1px solid rgba(0,45,114,0.1)', padding: '1rem', borderRadius: '8px', color: '#334155', fontSize: '1rem', outline: 'none', transition: 'border-color 0.3s' }}
-                      onFocus={e => e.target.style.borderColor = 'var(--color-accent)'}
-                      onBlur={e => e.target.style.borderColor = 'rgba(0,45,114,0.1)'}
-                      onChange={e => setFormData({...formData, phone: e.target.value})}
+                      style={{ background: 'rgba(248,250,252,0.8)', border: '1px solid rgba(0,45,114,0.1)', padding: '1rem', borderRadius: '8px', color: '#334155', fontSize: '1rem', outline: 'none', transition: 'all 0.3s' }}
+                      onFocus={e => { e.target.style.borderColor = 'var(--color-accent)'; e.target.style.boxShadow = '0 0 0 3px rgba(22,163,74,0.2)'; }}
+                      onBlur={e => { e.target.style.borderColor = 'rgba(0,45,114,0.1)'; e.target.style.boxShadow = 'none'; }}
+                      onChange={e => setFormData({...formData, name: e.target.value})}
                     />
                   </div>
 
-                  <div style={{ flex: '1 1 min(100%, 200px)', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                    <label htmlFor="formEmail" style={{ fontSize: '0.85rem', color: '#475569', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                      Correo Corporativo
+                  <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                    <div style={{ flex: '1 1 min(100%, 200px)', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                      <label htmlFor="formPhone" style={{ fontSize: '0.85rem', color: '#475569', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Número Celular (WhatsApp)
+                      </label>
+                      <input 
+                        id="formPhone"
+                        type="tel" 
+                        required
+                        style={{ background: 'rgba(248,250,252,0.8)', border: '1px solid rgba(0,45,114,0.1)', padding: '1rem', borderRadius: '8px', color: '#334155', fontSize: '1rem', outline: 'none', transition: 'all 0.3s' }}
+                        onFocus={e => { e.target.style.borderColor = 'var(--color-accent)'; e.target.style.boxShadow = '0 0 0 3px rgba(22,163,74,0.2)'; }}
+                        onBlur={e => { e.target.style.borderColor = 'rgba(0,45,114,0.1)'; e.target.style.boxShadow = 'none'; }}
+                        onChange={e => setFormData({...formData, phone: e.target.value})}
+                      />
+                    </div>
+
+                    <div style={{ flex: '1 1 min(100%, 200px)', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                      <label htmlFor="formEmail" style={{ fontSize: '0.85rem', color: '#475569', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        Correo Corporativo
+                      </label>
+                      <input 
+                        id="formEmail"
+                        type="email" 
+                        required
+                        style={{ background: 'rgba(248,250,252,0.8)', border: '1px solid rgba(0,45,114,0.1)', padding: '1rem', borderRadius: '8px', color: '#334155', fontSize: '1rem', outline: 'none', transition: 'all 0.3s' }}
+                        onFocus={e => { e.target.style.borderColor = 'var(--color-accent)'; e.target.style.boxShadow = '0 0 0 3px rgba(22,163,74,0.2)'; }}
+                        onBlur={e => { e.target.style.borderColor = 'rgba(0,45,114,0.1)'; e.target.style.boxShadow = 'none'; }}
+                        onChange={e => setFormData({...formData, email: e.target.value})}
+                      />
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                    <label htmlFor="formNeed" style={{ fontSize: '0.85rem', color: '#475569', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                      ¿Qué necesitas proteger hoy?
                     </label>
                     <input 
-                      id="formEmail"
-                      type="email" 
+                      id="formNeed"
+                      type="text" 
+                      placeholder="Ej. Quiero cotizar unas cámaras para mi bodega..."
                       required
-                      style={{ background: '#F8FAFC', border: '1px solid rgba(0,45,114,0.1)', padding: '1rem', borderRadius: '8px', color: '#334155', fontSize: '1rem', outline: 'none', transition: 'border-color 0.3s' }}
-                      onFocus={e => e.target.style.borderColor = 'var(--color-accent)'}
-                      onBlur={e => e.target.style.borderColor = 'rgba(0,45,114,0.1)'}
-                      onChange={e => setFormData({...formData, email: e.target.value})}
+                      style={{ background: 'rgba(248,250,252,0.8)', border: '1px solid rgba(0,45,114,0.1)', padding: '1rem', borderRadius: '8px', color: '#334155', fontSize: '1rem', outline: 'none', transition: 'all 0.3s' }}
+                      onFocus={e => { e.target.style.borderColor = 'var(--color-accent)'; e.target.style.boxShadow = '0 0 0 3px rgba(22,163,74,0.2)'; }}
+                      onBlur={e => { e.target.style.borderColor = 'rgba(0,45,114,0.1)'; e.target.style.boxShadow = 'none'; }}
+                      onChange={e => setFormData({...formData, need: e.target.value})}
                     />
                   </div>
-                </div>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                  <label htmlFor="formNeed" style={{ fontSize: '0.85rem', color: '#475569', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    ¿Qué necesitas proteger hoy?
-                  </label>
-                  <input 
-                    id="formNeed"
-                    type="text" 
-                    placeholder="Ej. Quiero cotizar unas cámaras para mi bodega..."
-                    required
-                    style={{ background: '#F8FAFC', border: '1px solid rgba(0,45,114,0.1)', padding: '1rem', borderRadius: '8px', color: '#334155', fontSize: '1rem', outline: 'none', transition: 'border-color 0.3s' }}
-                    onFocus={e => e.target.style.borderColor = 'var(--color-accent)'}
-                    onBlur={e => e.target.style.borderColor = 'rgba(0,45,114,0.1)'}
-                    onChange={e => setFormData({...formData, need: e.target.value})}
-                  />
-                </div>
-
-                <button type="submit" className="btn-primary" style={{ marginTop: '1.5rem', width: '100%', padding: '1.2rem', fontSize: '1.1rem' }}>
-                  Iniciar Diálogo Experto
-                </button>
-              </form>
+                  <div>
+                    <button type="submit" disabled={isSubmitting} className="btn-primary" style={{ marginTop: '1.5rem', width: '100%', padding: '1.2rem', fontSize: '1.1rem', opacity: isSubmitting ? 0.7 : 1, cursor: isSubmitting ? 'not-allowed' : 'pointer' }}>
+                      {isSubmitting ? 'Procesando...' : 'Iniciar Diálogo Experto'}
+                    </button>
+                    <div style={{ textAlign: 'center', marginTop: '0.8rem', fontSize: '0.85rem', color: '#64748B', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem' }}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                      Privacidad garantizada. No enviamos spam ni compartimos tus datos.
+                    </div>
+                  </div>
+                </form>
             </div>
           </div>
 

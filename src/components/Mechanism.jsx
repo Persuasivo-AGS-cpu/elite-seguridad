@@ -41,8 +41,46 @@ export default function Mechanism() {
   ];
 
   return (
-    <section className="section-py" style={{ background: '#F8FAFC' }}>
-      <div className="container">
+    <section className="section-py" style={{ background: '#F8FAFC', position: 'relative', overflow: 'hidden' }}>
+      
+      {/* Animated Styles for Mechanism */}
+      <style dangerouslySetInnerHTML={{__html: `
+        .mech-step {
+          position: relative;
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          padding: 2rem 1.5rem;
+          border-radius: 24px;
+          z-index: 2;
+          background: transparent;
+        }
+        .mech-step:hover {
+          transform: translateY(-8px);
+          background: #FFFFFF;
+          box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+        }
+        .mech-icon-circle {
+          transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          position: relative;
+        }
+        .mech-step:hover .mech-icon-circle {
+          transform: scale(1.1);
+          box-shadow: 0 15px 35px rgba(22, 163, 74, 0.4) !important;
+        }
+        .mech-step:hover .mech-icon-svg {
+          transform: scale(1.15);
+        }
+        .mech-icon-svg {
+          transition: transform 0.4s ease;
+        }
+        .mech-line {
+          position: absolute; top: 72px; left: 50%; width: 100%; height: 2px;
+          background: linear-gradient(90deg, var(--color-accent) 0%, rgba(22,163,74,0.05) 100%);
+          opacity: 0.5;
+          z-index: 1;
+        }
+      `}} />
+
+      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         
         <div style={{ textAlign: 'center', marginBottom: '4rem', maxWidth: '800px', margin: '0 auto 4rem auto' }}>
           <h2 className="animate-fade-up" style={{ color: 'var(--color-primary)' }}>
@@ -53,28 +91,26 @@ export default function Mechanism() {
           </p>
         </div>
 
-        <div className="grid-3" style={{ gap: '3rem' }}>
+        <div className="grid-3" style={{ gap: '1rem' }}>
           {steps.map((step, idx) => (
-            <div key={idx} className={`animate-fade-up delay-${(idx + 1) * 100}`} style={{ position: 'relative' }}>
+            <div key={idx} className={`mech-step animate-fade-up delay-${(idx + 1) * 100}`}>
               
-              {/* Connector line for desktop */}
+              {/* Static Connector line for desktop */}
               {idx !== 2 && (
-                <div className="hide-mobile" style={{ 
-                  position: 'absolute', top: '30px', left: '60%', width: '100%', 
-                  height: '2px', background: 'linear-gradient(90deg, var(--color-accent) 0%, transparent 100%)',
-                  opacity: 0.3, zIndex: 1
-                }} />
+                <div className="hide-mobile mech-line"></div>
               )}
 
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', position: 'relative', zIndex: 2 }}>
-                <div style={{ 
+                <div className="mech-icon-circle" style={{ 
                   width: '80px', height: '80px', borderRadius: '50%', 
                   background: 'var(--color-accent)', color: '#FFF', 
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  marginBottom: '2rem', boxShadow: '0 10px 25px rgba(22, 163, 74, 0.3)',
+                  marginBottom: '2rem', boxShadow: '0 10px 25px rgba(22, 163, 74, 0.2)',
                   border: '6px solid #FFF'
                 }}>
-                  {step.icon}
+                  <div className="mech-icon-svg">
+                    {step.icon}
+                  </div>
                 </div>
                 
                 <h3 style={{ fontSize: '1.4rem', marginBottom: '1rem', color: 'var(--color-primary)' }}>

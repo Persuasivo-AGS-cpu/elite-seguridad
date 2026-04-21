@@ -1,6 +1,6 @@
 export default function Maintenance() {
   return (
-    <section className="section-py relative" style={{ overflow: 'hidden' }}>
+    <section className="relative" style={{ overflow: 'hidden', padding: '2rem 0 3rem 0' }}>
       
       {/* Visual Break - Diagonal Angle effect via CSS or subtle background */}
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: -1 }}>

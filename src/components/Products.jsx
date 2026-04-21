@@ -7,7 +7,7 @@ export default function Products() {
       category: "Acceso Remoto",
       name: "Videoportero Inteligente Hikvision (IP)",
       description: "Contesta tu puerta desde el celular y abre a distancia. Ideal para residencias y oficinas.",
-      image: "https://ftp3.syscom.mx/cdn-cgi/image/format=auto,quality=80,width=600/usuarios/fotos/BancoFotografiasSyscom/HIKVISION/DSKIS603P_S/DSKIS603P_S-p.PNG",
+      image: "/products/kis603.png",
       features: ["Apertura App", "1080p Ultra Wide", "Táctil 7\"", "IP65 Exterior"]
     },
     {
@@ -15,7 +15,7 @@ export default function Products() {
       category: "Smart Home",
       name: "Cerradura Inteligente Wi-Fi Ezviz",
       description: "Convierte cualquier acceso en inteligente. Adiós a las copias de llaves olvidadas.",
-      image: "https://ftp3.syscom.mx/usuarios/fotos/BancoFotografiasSyscom/EZVIZ/CSDL05R200/CSDL05R200-p.PNG",
+      image: "/products/dl05.png",
       features: ["Wi-Fi Directo", "Huella y Teclado", "Passwords Temporales", "App Nativa"]
     },
     {
@@ -23,7 +23,7 @@ export default function Products() {
       category: "Color 24/7",
       name: "Kit Completo ColorVu TurboHD",
       description: "La oscuridad total ya no es un problema. Observa todo a color 24/7 sin puntos ciegos.",
-      image: "https://ftp3.syscom.mx/cdn-cgi/image/format=auto,quality=80,width=600/usuarios/fotos/BancoFotografiasSyscom/HIKVISION/KH1080PL4BC/KH1080PL4BC-l.PNG",
+      image: "/products/turbohd.png",
       features: ["Tecnología ColorVu", "TurboHD 1080p", "Monitoreo Remoto", "Cámaras Metálicas"]
     },
     {
@@ -31,7 +31,7 @@ export default function Products() {
       category: "Sin Cables",
       name: "Kit de Alarma Avanzada AX PRO",
       description: "Protección inteligente y sin cables. Sistema completo con notificaciones a tu celular.",
-      image: "https://ftp3.syscom.mx/cdn-cgi/image/format=auto,quality=80,width=600/usuarios/fotos/BancoFotografiasSyscom/HIKVISION/DSPWA48FULLK/DSPWA48FULLK-p.PNG",
+      image: "/products/axpro.png",
       features: ["Inmune a Mascotas", "Batería Respaldo", "Sirena Inalámbrica", "433 MHz Seguro"]
     },
     {
@@ -39,7 +39,7 @@ export default function Products() {
       category: "Wi-Fi Mesh",
       name: "Sistema Wi-Fi Inteligente Deco",
       description: "Elimina las zonas sin internet en tu hogar con una red ininterrumpida y poderosa.",
-      image: "https://ftp3.syscom.mx/cdn-cgi/image/format=auto,quality=80,width=600/usuarios/fotos/BancoFotografiasSyscom/TP-LINK/DECOM43PACK/DECOM43PACK-l.PNG",
+      image: "/products/deco.png",
       features: ["Cobertura Mesh", "Doble Banda", "Optimización IA", "+100 Dispositivos"]
     },
     {
@@ -47,13 +47,13 @@ export default function Products() {
       category: "Alta Fuerza",
       name: "Kit Control de Acceso Profesional",
       description: "Asegura el ingreso a tus instalaciones con un sistema magnético y energético 24/7.",
-      image: "https://ftp3.syscom.mx/cdn-cgi/image/format=auto,quality=80,width=600/usuarios/fotos/BancoFotografiasSyscom/ACCESSPRO/KITMAG12V/KITMAG12V-l.PNG",
+      image: "/products/kitmag12v.png",
       features: ["600 lbs Industriales", "Soporte de Batería", "Salida Sin Contacto", "Montaje Z/L"]
     }
   ];
 
   return (
-    <section id="catalogo" className="section-py relative" style={{ background: 'var(--color-bg-light)', borderTop: '1px solid rgba(0,45,114,0.05)' }}>
+    <section id="catalogo" className="relative" style={{ background: 'var(--color-bg-light)', borderTop: '1px solid rgba(0,45,114,0.05)', padding: '5rem 0 2rem 0' }}>
       
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         
@@ -91,6 +91,8 @@ export default function Products() {
                 <img 
                   src={item.image} 
                   alt={item.name} 
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => { e.target.src = 'https://ftp3.syscom.mx/usuarios/fotos/BancoFotografiasSyscom/SYSCOM/GENERIC_IMAGE/portada.PNG'; }}
                 />
               </div>
@@ -108,8 +110,8 @@ export default function Products() {
                 </div>
 
                 <div className="action-arrow">
-                  Integrar Sistema
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <span>Cotizar Sistema</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
                   </svg>

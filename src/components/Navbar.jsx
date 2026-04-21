@@ -13,18 +13,27 @@ export default function Navbar() {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         
         {/* Logo Integration - Sleek Wrapper, Aggressive Visual Scale */}
-        <div style={{ display: 'flex', alignItems: 'center', height: '40px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', height: '40px', gap: '1.5rem' }}>
           <img 
-            src="/logo-elite-final.png" 
-            alt="Elite Seguridad" 
+            src="/shield-icon.png" 
+            alt="Escudo Elite" 
             className="nav-logo"
             style={{ 
-              height: '100%', width: 'auto', objectFit: 'contain', 
+              height: '100%', minHeight: '35px', width: 'auto', objectFit: 'contain', 
               transformOrigin: 'left center',
-              filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.05))',
+              filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.08))',
               transition: 'transform 0.3s'
             }} 
           />
+          <span style={{
+            fontSize: '1.2rem',
+            fontWeight: 800,
+            color: 'var(--color-primary)',
+            letterSpacing: '-0.5px',
+            whiteSpace: 'nowrap'
+          }}>
+            Elite Seguridad
+          </span>
         </div>
 
         {/* Desktop Navigation */}

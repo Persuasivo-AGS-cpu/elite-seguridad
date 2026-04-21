@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function FaqBlock() {
   const [openIdx, setOpenIdx] = useState(0); // First open by default
@@ -21,6 +21,32 @@ export default function FaqBlock() {
       a: "No. Para poder garantizar nuestro trabajo a prueba de fallos y emitir nuestra garantía blindada, solo operamos con equipo de grado profesional (Hikvision, Syscom) provisto directamente por nosotros."
     }
   ];
+
+  useEffect(() => {
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.a
+        }
+      }))
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'faq-schema-jsonld';
+    script.innerHTML = JSON.stringify(faqSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      const existingScript = document.getElementById('faq-schema-jsonld');
+      if (existingScript) document.head.removeChild(existingScript);
+    };
+  }, []);
 
   return (
     <section className="section-py" style={{ background: '#F8FAFC' }}>

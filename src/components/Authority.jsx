@@ -9,21 +9,21 @@ export default function Authority() {
             <h2 style={{ marginBottom: '1.5rem', color: 'var(--color-brand-blue)' }}>
               Seguridad Confiable <br />Para tu Tranquilidad.
             </h2>
-            <p style={{ marginBottom: '2rem', color: '#475569' }}>
-              Sabemos lo importante que es proteger a tu familia y tu patrimonio. Por eso, nos aseguramos de que cada equipo que instalamos funcione a la perfección exactamente cuando más lo necesitas. Adiós a las fallas técnicas.
+            <p style={{ marginBottom: '2rem', color: '#475569', fontSize: '1.1rem' }}>
+              Confianza de hogares y negocios en Monterrey. Sabemos lo importante que es proteger a tu familia y tu patrimonio.
             </p>
             <p style={{ marginBottom: '2rem', paddingLeft: '1rem', borderLeft: '3px solid var(--color-accent)', fontWeight: 600, color: 'var(--color-brand-blue)' }}>
-              Cuidamos tu espacio instalando exclusivamente equipos profesionales de la más alta calidad.
+              Atención personalizada: Te recomendamos el sistema ideal según tu necesidad y presupuesto.
             </p>
             
             <div style={{ display: 'flex', gap: '3rem', marginTop: '3rem' }}>
               <div>
                 <h3 style={{ fontSize: '3rem', color: 'var(--color-brand-blue)', marginBottom: '0.2rem', position: 'relative', display: 'inline-block', lineHeight: 1 }}>
-                  10+
+                  500+
                   {/* Subtle neon highlight to maintain brand dna */}
                   <div style={{ position: 'absolute', bottom: '6px', left: 0, width: '100%', height: '10px', background: 'var(--color-accent)', zIndex: -1, opacity: 0.6, borderRadius: '4px' }}></div>
                 </h3>
-                <span style={{ display: 'block', fontSize: '0.9rem', color: '#475569', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', marginTop: '0.5rem' }}>Años en N.L.</span>
+                <span style={{ display: 'block', fontSize: '0.9rem', color: '#475569', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', marginTop: '0.5rem' }}>Instalaciones en N.L.</span>
               </div>
               <div>
                 <h3 style={{ fontSize: '3rem', color: 'var(--color-brand-blue)', marginBottom: '0.2rem', position: 'relative', display: 'inline-block', lineHeight: 1 }}>

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 export default function Hero() {
   return (
-    <section className="hero-section" style={{ display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
+    <section className="hero-section" style={{ display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', padding: '8rem 0 2rem 0', minHeight: 'auto' }}>
       
       {/* Light Background Strategy */}
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: -1, background: 'var(--color-bg-dark)' }}>
@@ -26,12 +26,12 @@ export default function Hero() {
             </div>
 
             <h1 className="animate-fade-up delay-100 hero-title" style={{ color: 'var(--color-primary)' }}>
-              Seguridad Inteligente: <br />
-              <span className="text-gradient">La Tranquilidad de Tener el Control.</span>
+              Protege lo que más te importa <br />
+              <span className="text-gradient">con tecnología inteligente.</span>
             </h1>
 
             <p className="animate-fade-up delay-200 hero-subtitle">
-              Instalación profesional y mantenimiento experto de sistemas de videovigilancia, accesos biométricos y automatización residencial.
+              Sistemas de videovigilancia profesionales con monitoreo en tiempo real, audio integrado y visión nocturna a color.
             </p>
 
             <div className="flex-center animate-fade-up delay-300" style={{ gap: '1rem', flexWrap: 'wrap', justifyContent: 'flex-start' }}>

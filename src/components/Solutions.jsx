@@ -39,7 +39,7 @@ export default function Solutions() {
   ];
 
   return (
-    <section id="soluciones" className="section-py relative" style={{ background: '#FFFFFF', overflow: 'hidden' }}>
+    <section id="soluciones" className="relative" style={{ background: '#FFFFFF', padding: '2rem 0 6rem 0', overflow: 'hidden' }}>
       
       {/* Dynamic Corporate Light CSS Isolated for this section */}
       <style dangerouslySetInnerHTML={{__html: `
@@ -51,7 +51,7 @@ export default function Solutions() {
         .bento-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 2rem;
+          gap: 1.2rem;
         }
         .bento-item-wide {
           grid-column: 1 / -1;
@@ -65,7 +65,7 @@ export default function Solutions() {
           background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 100%);
           border: 1px solid rgba(0, 45, 114, 0.08);
           border-radius: 20px;
-          padding: 2.5rem;
+          padding: 1.5rem;
           position: relative;
           overflow: hidden;
           transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -76,18 +76,18 @@ export default function Solutions() {
         .tech-card-wide {
           flex-direction: row;
           align-items: stretch;
-          gap: 3rem;
+          gap: 2rem;
         }
         @media(max-width: 900px) {
           .tech-card-wide {
             flex-direction: column;
-            gap: 2rem;
+            gap: 1.5rem;
           }
         }
         .tech-card:hover {
-          transform: translateY(-8px);
+          transform: translateY(-5px);
           border-color: rgba(22, 163, 74, 0.3);
-          box-shadow: 0 20px 40px -10px rgba(0, 45, 114, 0.08);
+          box-shadow: 0 15px 35px -10px rgba(0, 45, 114, 0.08);
         }
         .tech-card::after {
           content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
@@ -96,27 +96,27 @@ export default function Solutions() {
         }
         .tech-card:hover::after { opacity: 1; }
         .tech-icon-wrapper {
-          width: 60px; height: 60px; border-radius: 16px;
+          width: 48px; height: 48px; border-radius: 12px;
           background: rgba(22, 163, 74, 0.08);
           border: 1px solid rgba(22, 163, 74, 0.15);
           display: flex; align-items: center; justify-content: center;
           color: var(--color-accent);
-          margin-bottom: 2rem; position: relative; z-index: 2;
+          margin-bottom: 1rem; position: relative; z-index: 2;
           transition: all 0.4s ease;
         }
         .tech-card:hover .tech-icon-wrapper {
           background: var(--color-accent); color: #FFF;
-          box-shadow: 0 0 20px rgba(22, 163, 74, 0.3); transform: scale(1.05) rotate(-5deg);
+          box-shadow: 0 0 15px rgba(22, 163, 74, 0.3); transform: scale(1.05) rotate(-5deg);
         }
         .tech-badge {
-          position: absolute; top: 2.5rem; right: 2rem;
-          font-size: 0.7rem; font-weight: 800; letter-spacing: 2px;
+          position: absolute; top: 1.5rem; right: 1.5rem;
+          font-size: 0.65rem; font-weight: 800; letter-spacing: 2px;
           color: rgba(0,45,114,0.3); font-family: monospace;
           transition: color 0.4s ease;
         }
         .tech-card:hover .tech-badge { color: var(--color-brand-blue); }
         .tech-specs {
-          margin-top: auto; background: #F1F5F9; padding: 1.5rem;
+          margin-top: auto; background: #F1F5F9; padding: 1.2rem;
           border-radius: 12px; border: 1px solid rgba(0,45,114,0.05);
           flex: 1;
         }
@@ -126,19 +126,19 @@ export default function Solutions() {
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         
-        <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <span style={{ 
-            display: 'inline-block', padding: '0.4rem 1rem', 
+            display: 'inline-block', padding: '0.3rem 1rem', 
             background: 'var(--color-bg-light)', color: 'var(--color-brand-blue)', 
-            borderRadius: '20px', fontSize: '0.8rem', fontWeight: 800, letterSpacing: '1px',
-            marginBottom: '1.5rem', border: '1px solid rgba(0, 45, 114, 0.1)'
+            borderRadius: '20px', fontSize: '0.75rem', fontWeight: 800, letterSpacing: '1px',
+            marginBottom: '1rem', border: '1px solid rgba(0, 45, 114, 0.1)'
           }}>
             ARQUITECTURA DE SEGURIDAD
           </span>
-          <h2 className="animate-fade-up" style={{ color: 'var(--color-primary)', fontSize: '2.5rem' }}>
+          <h2 className="animate-fade-up" style={{ color: 'var(--color-primary)', fontSize: '2.2rem' }}>
             Ecosistemas <span className="text-gradient">Tecnológicos</span>
           </h2>
-          <p className="animate-fade-up delay-100" style={{ maxWidth: '600px', margin: '1rem auto 0', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
+          <p className="animate-fade-up delay-100" style={{ maxWidth: '600px', margin: '0.5rem auto 0', color: 'var(--color-text-muted)', fontSize: '0.9rem', lineHeight: 1.5 }}>
             Infraestructura de alta disponibilidad diseñada para disuadir, registrar y alertar en microsegundos. Sin latencias, sin puntos ciegos.
           </p>
         </div>
@@ -152,30 +152,30 @@ export default function Solutions() {
                 <div className="tech-badge">SYS.0{index + 1}</div>
                 
                 {/* Content Side */}
-                <div style={isWide ? { flex: 1.2, display: 'flex', flexDirection: 'column' } : {}}>
+                <div style={isWide ? { flex: 1.2, display: 'flex', flexDirection: 'column', justifyContent: 'center' } : {}}>
                   <div className="tech-icon-wrapper">
-                    <div style={{ width: '32px', height: '32px' }}>{item.icon}</div>
+                    <div style={{ width: '24px', height: '24px' }}>{item.icon}</div>
                   </div>
                   
-                  <h3 style={{ fontSize: '1.4rem', marginBottom: '0.5rem', color: 'var(--color-brand-blue)' }}>{item.title}</h3>
-                  <div style={{ color: 'var(--color-accent)', fontWeight: 600, fontSize: '0.8rem', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                  <h3 style={{ fontSize: '1.2rem', marginBottom: '0.3rem', color: 'var(--color-brand-blue)' }}>{item.title}</h3>
+                  <div style={{ color: 'var(--color-accent)', fontWeight: 600, fontSize: '0.75rem', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
                     {item.subtitle}
                   </div>
                   
-                  <p style={{ marginBottom: isWide ? '0' : '2rem', color: 'var(--color-text-muted)', fontSize: '0.95rem', lineHeight: 1.6 }}>
+                  <p style={{ marginBottom: isWide ? '0' : '1rem', color: 'var(--color-text-muted)', fontSize: '0.85rem', lineHeight: 1.5 }}>
                     {item.painpoint}
                   </p>
                 </div>
                 
                 {/* Specs Side */}
                 <div className="tech-specs" style={isWide ? { margin: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center' } : {}}>
-                  <div style={{ fontSize: '0.7rem', color: 'rgba(0,45,114,0.5)', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '1rem', fontWeight: 800 }}>
+                  <div style={{ fontSize: '0.65rem', color: 'rgba(0,45,114,0.5)', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '0.8rem', fontWeight: 800 }}>
                     Specs Hardware
                   </div>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                     {item.features.map((feat, idx) => (
-                      <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.8rem', fontSize: '0.9rem', color: '#334155', fontWeight: 500 }}>
-                        <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--color-accent)', boxShadow: '0 0 6px rgba(22,163,74,0.4)' }}></div>
+                      <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontSize: '0.8rem', color: '#334155', fontWeight: 500 }}>
+                        <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--color-accent)', boxShadow: '0 0 5px rgba(22,163,74,0.4)' }}></div>
                         {feat}
                       </li>
                     ))}
