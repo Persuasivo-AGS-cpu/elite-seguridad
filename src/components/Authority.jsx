@@ -19,7 +19,7 @@ export default function Authority() {
             <div style={{ display: 'flex', gap: '3rem', marginTop: '3rem' }}>
               <div>
                 <h3 style={{ fontSize: '3rem', color: 'var(--color-brand-blue)', marginBottom: '0.2rem', position: 'relative', display: 'inline-block', lineHeight: 1 }}>
-                  500+
+                  100+
                   {/* Subtle neon highlight to maintain brand dna */}
                   <div style={{ position: 'absolute', bottom: '6px', left: 0, width: '100%', height: '10px', background: 'var(--color-accent)', zIndex: -1, opacity: 0.6, borderRadius: '4px' }}></div>
                 </h3>
