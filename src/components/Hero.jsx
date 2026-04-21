@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 export default function Hero() {
   return (
-    <section className="section-py" style={{ minHeight: '90vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', paddingTop: '120px' }}>
+    <section className="hero-section" style={{ display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
       
       {/* Light Background Strategy */}
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: -1, background: 'var(--color-bg-dark)' }}>
@@ -11,7 +11,7 @@ export default function Hero() {
       </div>
 
       <div className="container">
-        <div className="grid-2" style={{ alignItems: 'center', gap: '4rem' }}>
+        <div className="grid-2 hero-grid">
           
           <div style={{ zIndex: 2 }}>
             <div className="animate-fade-up" style={{ marginBottom: '1.5rem' }}>
@@ -25,12 +25,12 @@ export default function Hero() {
               </span>
             </div>
 
-            <h1 className="animate-fade-up delay-100" style={{ marginBottom: '1.5rem', color: 'var(--color-primary)' }}>
+            <h1 className="animate-fade-up delay-100 hero-title" style={{ color: 'var(--color-primary)' }}>
               Seguridad Inteligente: <br />
               <span className="text-gradient">La Tranquilidad de Tener el Control.</span>
             </h1>
 
-            <p className="animate-fade-up delay-200" style={{ fontSize: '1.15rem', marginBottom: '2.5rem', maxWidth: '600px' }}>
+            <p className="animate-fade-up delay-200 hero-subtitle">
               Instalación profesional y mantenimiento experto de sistemas de videovigilancia, accesos biométricos y automatización residencial.
             </p>
 
@@ -55,6 +55,7 @@ export default function Hero() {
             <div style={{ position: 'relative', width: '100%', maxWidth: '600px', aspectRatio: '4/3', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <video 
                 src="/hero-video.mp4" 
+                poster="/hero-elite.png"
                 autoPlay
                 loop
                 muted

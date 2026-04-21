@@ -10,33 +10,6 @@ export default function Navbar() {
       transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
       boxShadow: '0 10px 40px -10px rgba(0, 45, 114, 0.08), inset 0 1px 0 rgba(255,255,255,0.7)'
     }}>
-      {/* Scoped Responsive Styles */}
-      <style dangerouslySetInnerHTML={{__html: `
-        .navbar-container {
-          padding: 0.6rem 1.5rem;
-        }
-        .nav-logo {
-          transform: scale(1.8);
-        }
-        .nav-cta {
-          padding: 0.6rem 1.25rem;
-          font-size: 0.9rem;
-        }
-        @media (max-width: 768px) {
-          .navbar-container {
-            padding: 0.5rem 0.8rem !important;
-          }
-          .nav-logo {
-            transform: scale(1.4) !important;
-          }
-          .nav-cta {
-            padding: 0.5rem 0.8rem !important;
-            font-size: 0.8rem !important;
-            white-space: nowrap;
-          }
-        }
-      `}} />
-
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         
         {/* Logo Integration - Sleek Wrapper, Aggressive Visual Scale */}
