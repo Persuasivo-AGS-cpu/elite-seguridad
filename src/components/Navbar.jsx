@@ -30,7 +30,7 @@ export default function Navbar() {
             color: 'var(--color-primary)',
             whiteSpace: 'nowrap'
           }}>
-            Elite Seguridad
+            Elite <span className="hide-mobile">Seguridad</span>
           </span>
         </div>
 
