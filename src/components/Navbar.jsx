@@ -13,7 +13,7 @@ export default function Navbar() {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         
         {/* Logo Integration - Sleek Wrapper, Aggressive Visual Scale */}
-        <div style={{ display: 'flex', alignItems: 'center', height: '40px', gap: '1.5rem' }}>
+        <div className="nav-brand-wrapper" style={{ display: 'flex', alignItems: 'center', height: '40px' }}>
           <img 
             src="/shield-icon.png" 
             alt="Escudo Elite" 
@@ -25,11 +25,9 @@ export default function Navbar() {
               transition: 'transform 0.3s'
             }} 
           />
-          <span style={{
-            fontSize: '1.2rem',
+          <span className="nav-brand-text" style={{
             fontWeight: 800,
             color: 'var(--color-primary)',
-            letterSpacing: '-0.5px',
             whiteSpace: 'nowrap'
           }}>
             Elite Seguridad

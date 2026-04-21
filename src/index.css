@@ -184,10 +184,14 @@ p { font-size: 1.1rem; color: var(--color-text-muted); letter-spacing: -0.01em; 
 /* Navbar Scoped Styles */
 .navbar-container { padding: 0.6rem 1.5rem; }
 .nav-logo { transform: scale(1.8); transition: transform 0.3s; }
+.nav-brand-wrapper { gap: 1.5rem; }
+.nav-brand-text { font-size: 1.2rem; letter-spacing: -0.5px; }
 .nav-cta { padding: 0.6rem 1.25rem; font-size: 0.9rem; }
 @media (max-width: 768px) {
   .navbar-container { padding: 0.5rem 0.8rem !important; }
-  .nav-logo { transform: scale(1.4) !important; }
+  .nav-logo { transform: scale(1.2) !important; }
+  .nav-brand-wrapper { gap: 0.6rem !important; }
+  .nav-brand-text { font-size: 0.95rem !important; letter-spacing: -0.5px !important; }
   .nav-cta { padding: 0.6rem 1rem !important; font-size: 0.85rem !important; white-space: nowrap; }
 }
 
