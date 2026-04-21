@@ -38,11 +38,29 @@ export default function Authority() {
           <div className="animate-fade-up delay-200" style={{ position: 'relative', order: 0 }}>
             {/* Business owner image */}
             <div style={{ position: 'absolute', top: '15px', right: '-15px', bottom: '-15px', left: '15px', background: 'var(--color-accent)', borderRadius: '24px', zIndex: 0, opacity: 0.2 }}></div>
-            <img 
-              src="/authority-elite.png" 
-              alt="Cliente B2B de Elite Seguridad tranquilo en su bodega"
-              style={{ width: '100%', height: 'auto', borderRadius: '24px', position: 'relative', zIndex: 1, boxShadow: '0 20px 40px rgba(0,45,114,0.1)' }}
-            />
+            <div style={{ position: 'relative', zIndex: 1, display: 'block' }}>
+              <img 
+                src="/authority-elite.png" 
+                alt="Dueño de negocio B2B de Elite Seguridad tranquilo en su bodega"
+                style={{ width: '100%', height: 'auto', borderRadius: '24px', position: 'relative', zIndex: 1, boxShadow: '0 20px 40px rgba(0,45,114,0.1)' }}
+              />
+              {/* Escudo Bordado (Pin/Patch) en el Saco */}
+              <img 
+                src="/shield-icon.png" 
+                alt="Elite Patch"
+                style={{
+                  position: 'absolute',
+                  top: '48%',      // Approx chest height
+                  left: '55%',     // Approx left lapel area (viewer's right)
+                  width: '6%',     // Scales with the image automatically
+                  maxWidth: '35px',
+                  zIndex: 2,
+                  opacity: 0.85,
+                  transform: 'rotate(2deg)',
+                  filter: 'drop-shadow(0 2px 2px rgba(0,0,0,0.5)) grayscale(10%) contrast(1.2)'
+                }}
+              />
+            </div>
             
             {/* Floating Brand Badges */}
             <div className="glass-panel" style={{ position: 'absolute', bottom: '20px', right: '-20px', padding: '1.5rem', zIndex: 2, background: 'rgba(255,255,255,0.9)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
