@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte Arquitectura | Elite Seguridad</title>
+    <!-- Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #050505;
+            --white: #FDFDFD;
+            --gray-light: #F0F0F0;
+            --gray: #888888;
+            --accent: #16A34A; /* Elite Green Accent */
+            --page-width: 210mm;
+            --page-height: 297mm;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #e5e5e5;
+            -webkit-font-smoothing: antialiased;
+            color: var(--black);
+        }
+
+        /* Page Structure */
+        .page {
+            width: var(--page-width);
+            height: var(--page-height);
+            background: var(--white);
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page-dark {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        @media print {
+            body { background: none; }
+            .page { 
+                margin: 0; 
+                box-shadow: none; 
+                page-break-after: always; 
+                width: 100vw;
+                height: 100vh;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 2rem; }
+        h2 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 1.5rem; }
+        h3 { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 1rem; color: var(--gray); }
+        p { font-size: 1rem; font-weight: 400; line-height: 1.7; color: var(--gray); margin-bottom: 1.5rem; }
+        
+        .text-light { color: #A0A0A0; }
+        .text-white { color: var(--white); }
+        .text-accent { color: var(--accent); }
+
+        .content-wrap { padding: 40mm 20mm 20mm 20mm; flex: 1; display: flex; flex-direction: column; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .grid-1-2 { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 40px; }
+        .flex-center { display: flex; align-items: center; justify-content: center; height: 100%; flex-direction: column; }
+        
+        .divider { width: 40px; height: 4px; background: var(--accent); margin-bottom: 2rem; }
+        .badge { display: inline-block; padding: 5px 12px; border: 1px solid var(--accent); color: var(--accent); border-radius: 20px; font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem; }
+        
+        .screenshot-box {
+            width: 100%;
+            background-color: #F8F8F8;
+            border-radius: 12px;
+            border: 1px solid #EAEAEA;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+            padding: 24px;
+            margin-top: 1rem;
+            /* Let it define its own height based on image */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .screenshot-box-dark {
+            background-color: #0F0F0F;
+            border: 1px solid #1A1A1A;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .screenshot-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* subtle shadow for the image inside the frame */
+        }
+        
+        .screenshot-box-dark img {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .page-header {
+            position: absolute;
+            top: 20mm;
+            left: 20mm;
+            right: 20mm;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gray);
+            border-bottom: 1px solid var(--gray-light);
+            padding-bottom: 10px;
+        }
+        .page-dark .page-header { border-color: #222; }
+    </style>
+</head>
+<body>
+
+    <!-- PAGE 1: COVER -->
+    <div class="page page-dark">
+        <div class="content-wrap flex-center" style="text-align: center;">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 0.8rem; margin-bottom: 5rem;">
+                <!-- Punto Neón Persuasivo -->
+                <div style="width: 12px; height: 12px; background-color: #CCFF00; border-radius: 50%; box-shadow: 0 0 15px rgba(204, 255, 0, 0.6), 0 0 30px rgba(204, 255, 0, 0.4);"></div>
+                <div style="font-weight: 800; font-size: 1.5rem; letter-spacing: 4px; color: #FFF; margin-top: 2px;">
+                    PERSUASIVO
+                </div>
+            </div>
+            
+            <div class="badge" style="border-color: rgba(255,255,255,0.2); color: #FFF;">Confidencial - Para cliente final</div>
+            <h1 class="text-white" style="margin-bottom: 1rem;">ELITE SEGURIDAD</h1>
+            <p class="text-light" style="font-size: 1.3rem;">Arquitectura Web y Diseño de Interfaz</p>
+            
+            <div style="margin-top: 5rem; width: 2px; height: 100px; background: rgba(255,255,255,0.2);"></div>
+
+            <div style="position: absolute; bottom: 20mm; font-size: 0.8rem; letter-spacing: 2px; color: #666; font-weight: 600;">
+                PERSUASIVO.MX
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 2: PHILOSOPHY -->
+    <div class="page">
+        <div class="page-header">
+            <span>Visión Arquitectónica</span>
+            <span>Persuasivo</span>
+        </div>
+        <div class="content-wrap" style="justify-content: center;">
+            <div class="divider"></div>
+            <h2>La ciencia detrás de la conversión.</h2>
+            <div class="grid-2">
+                <div>
+                    <p>Una <i>Landing Page</i> (o página de aterrizaje) no es un lienzo artístico aleatorio. Es una máquina de precisión psicológica diseñada con un solo propósito: <strong>transformar el interés de un visitante en una acción rentable.</strong></p>
+                    <p>Lograrlo no es accidental. Requiere la fusión de tres disciplinas críticas:</p>
+                    <ul style="color: var(--gray); line-height: 1.8; margin-bottom: 1.5rem; padding-left: 20px;">
+                        <li><strong>Copywriting Emocional:</strong> Desarticular objeciones antes de que nazcan.</li>
+                        <li><strong>Ingeniería Visual (UI/UX):</strong> Reducir el esfuerzo cognitivo mediante jerarquías claras.</li>
+                        <li><strong>Fricción Cero:</strong> Crear infraestructuras tecnológicas ultrarrápidas, erradicando los tiempos de espera.</li>
+                    </ul>
+                </div>
+                <div>
+                    <p>Para Elite Seguridad, la decisión de diseño ("Glassmorphism", contrastes oscuros combinados con espacios prístinos) fue elegida estratégicamente. Transmite la autoridad impenetrable y confidencialidad que un servicio de protección B2B exige, pero sin ser anticuado.</p>
+                    <p>La estructura de esta página web actúa como <strong>el vendedor más incansable de la empresa</strong>, guiando al usuario por un túnel narrativo que inicia reconociendo su vulnerabilidad, y termina ofreciendo una resolución táctica a través de asesoramiento experto. Esto es lo que compone a una Landing exitosa.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 3: 01 HERO -->
+    <div class="page">
+        <div class="page-header">
+            <span>01 / El Anzuelo Visual</span>
+            <span>Arquitectura 2026</span>
+        </div>
+        <div class="content-wrap">
+            <div class="badge">First Paint (Hero)</div>
+            <h2 style="font-size: 2rem;">Retención en 3 Segundos.</h2>
+            <p>La zona "Above the fold" es crítica: el usuario dedica solo 3 segundos a evaluar pertinencia de permanencia. En lugar de bloques de texto letárgicos, orquestamos un <strong>bucle de video cinemático</strong> asíncrono atado a la propuesta de valor principal. La UI actúa rápido impulsada por un "Trust Badge" magnético (100% Garantizado).</p>
+            
+            <div class="screenshot-box">
+                <img src="/ss-hero.png" onerror="this.style.opacity='0'" alt="Hero Screenshot"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 4: 02 PAIN POINTS -->
+    <div class="page page-dark">
+        <div class="page-header">
+            <span>02 / Disonancia Cognitiva</span>
+            <span>Arquitectura 2026</span>
+        </div>
+        <div class="content-wrap">
+            <div class="badge" style="border-color: rgba(255,255,255,0.2);">Conexión de Empatía</div>
+            <h2 class="text-white" style="font-size: 2rem;">Agitación del Dolor.</h2>
+            <p class="text-light">Un producto B2B avanzado no se vende por especificaciones, se vende mediante la erradicación del riesgo. Articulamos los "Pain Points" (robo, ineficiencia, vulnerabilidad) en un ambiente denso ("Dark Mode"). El cerebro asocia instintivamente el fondo oscuro con gravedad, lo cual prepara psicológicamente al usuario para escuchar la solución.</p>
+            
+            <div class="screenshot-box screenshot-box-dark">
+                <img src="/ss-dolores.png" onerror="this.style.opacity='0'" alt="Pain Points Screenshot"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 5: 03 VALUE PROP -->
+    <div class="page">
+        <div class="page-header">
+            <span>03 / La Promesa de Valor</span>
+            <span>Arquitectura 2026</span>
+        </div>
+        <div class="content-wrap">
+            <div class="badge">Middle Funnel</div>
+            <h2 style="font-size: 2rem;">Ecosistema de Soluciones.</h2>
+            <p>Tras agitar el problema, la UI cambia agresivamente a modo claro ("Light Mode") para inyectar alivio visual. Aquí presentamos los pilares de la marca usando una grilla flotante "Glassmorphism" y micro-animaciones en tarjetas. Esta simetría reduce el esfuerzo de lectura y segmenta la oferta técnica en piezas del tamaño de un bocado.</p>
+            
+            <div class="screenshot-box">
+                <img src="/ss-soluciones.png" onerror="this.style.opacity='0'" alt="Solutions Screenshot"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 6: 04 EVIDENCIA Y CATALOGO -->
+    <div class="page">
+        <div class="page-header">
+            <span>04 / Demostración Táctica</span>
+            <span>Arquitectura 2026</span>
+        </div>
+        <div class="content-wrap">
+            <div class="grid-1-2" style="margin-bottom: 0;">
+                <div>
+                    <div class="badge">Ingeniería UX</div>
+                    <h2 style="font-size: 2rem;">Evidencia Visceral & Bento UI.</h2>
+                    <p>Mapeamos la oferta comercial mediante integraciones de interfaz ("Cerraduras Wi-Fi") y el modelo mental de "Bento Grid". Eliminar listas de texto en favor de tarjetas dimensionales eleva la autoridad del hardware y transforma el catálogo aburrido en una experiencia táctil tipo E-Commerce.</p>
+                </div>
+                <div class="screenshot-box screenshot-box-dark" style="margin-top: 0;">
+                    <img src="/ss-evidencia.png" onerror="this.style.opacity='0'" alt="Evidencia Screenshot"/>
+                </div>
+            </div>
+            
+            <div class="screenshot-box">
+                <img src="/ss-catalogo.png" onerror="this.style.opacity='0'" alt="Catalogo Screenshot"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 7: 05 CONFIANZA Y GARANTIA -->
+    <div class="page">
+        <div class="page-header">
+            <span>05 / Infraestructura de Confianza</span>
+            <span>Arquitectura 2026</span>
+        </div>
+        <div class="content-wrap">
+            <div class="badge">Risk Reversal</div>
+            <h2 style="font-size: 2rem;">Mitigación de Riesgo B2B.</h2>
+            <p>Antes de pedir que dejen sus datos, la landing ejecuta herramientas de reducción de ansiedad: Barras técnicas de confianza (HIKVISION, SYSCOM, EZVIZ, TP-LINK, EPCOM), Inversión de Riesgo (Garantía Elite 100%) y resolución anticipada de objeciones mediante un FAQ interactivo en formato acordeón dinámico. La arquitectura no deja ninguna duda cognitiva al azar.</p>
+            
+            <div class="screenshot-box">
+                <img src="/ss-confianza.png" onerror="this.style.opacity='0'" alt="Trust Bar Screenshot"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 8: 06 FOOTER CONVERSION -->
+    <div class="page page-dark">
+        <div class="page-header">
+            <span>06 / Conversión "Zero Friction"</span>
+            <span>Arquitectura 2026</span>
+        </div>
+        <div class="content-wrap">
+            <div class="grid-2" style="margin-bottom: 0;">
+                <div>
+                    <div class="badge" style="border-color:rgba(255,255,255,0.2);">Bottom of Funnel</div>
+                    <h2 class="text-white" style="font-size: 2rem;">Cierre Híbrido Inmediato.</h2>
+                </div>
+                <div>
+                    <p class="text-light">Cerrar una venta B2B local requiere calor humano. Desarrollamos un embudo híbrido: un formulario robusto e inmersivo ("UI Premium") que en segundo plano enruta datos de forma segura al corporativo, y en la capa frontal dispara de inmediato la app de WhatsApp del prospecto. Esto dispara drásticamente las métricas de respuesta técnica y cierra el círculo de arquitectura Elite.</p>
+                </div>
+            </div>
+            
+            <div class="screenshot-box screenshot-box-dark">
+                <img src="/ss-footer.png" onerror="this.style.opacity='0'" alt="Footer Screenshot"/>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
