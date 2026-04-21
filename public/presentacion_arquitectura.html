@@ -45,6 +45,11 @@
             color: var(--white);
         }
 
+        .page:last-of-type {
+            page-break-after: auto;
+            margin-bottom: 40px;
+        }
+
         @media print {
             body { background: none; }
             .page { 
@@ -55,6 +60,9 @@
                 height: 100vh;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
+            }
+            .page:last-of-type {
+                page-break-after: auto;
             }
         }
 
@@ -77,6 +85,7 @@
         
         .screenshot-box {
             width: 100%;
+            height: max-content; /* Previene estiramiento en Grid */
             background-color: #F8F8F8;
             border-radius: 12px;
             border: 1px solid #EAEAEA;
@@ -88,6 +97,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            align-self: center; 
         }
         
         .screenshot-box-dark {
@@ -196,17 +206,17 @@
     </div>
 
     <!-- PAGE 4: 02 PAIN POINTS -->
-    <div class="page page-dark">
+    <div class="page">
         <div class="page-header">
             <span>02 / Disonancia Cognitiva</span>
             <span>Arquitectura 2026</span>
         </div>
         <div class="content-wrap">
-            <div class="badge" style="border-color: rgba(255,255,255,0.2);">Conexión de Empatía</div>
-            <h2 class="text-white" style="font-size: 2rem;">Agitación del Dolor.</h2>
-            <p class="text-light">Un producto B2B avanzado no se vende por especificaciones, se vende mediante la erradicación del riesgo. Articulamos los "Pain Points" (robo, ineficiencia, vulnerabilidad) en un ambiente denso ("Dark Mode"). El cerebro asocia instintivamente el fondo oscuro con gravedad, lo cual prepara psicológicamente al usuario para escuchar la solución.</p>
+            <div class="badge">Conexión de Empatía</div>
+            <h2 style="font-size: 2rem;">Agitación del Dolor.</h2>
+            <p>Un producto B2B avanzado no se vende por especificaciones, se vende mediante la erradicación del riesgo. Articulamos los "Pain Points" (robo, ineficiencia, vulnerabilidad) en un ambiente crudo y directo. El contraste clínico del espacio en blanco puro forzado contra alertas rojas visuales se registra instintivamente como una señal de advertencia, preparando psicológicamente al usuario para escuchar la solución.</p>
             
-            <div class="screenshot-box screenshot-box-dark">
+            <div class="screenshot-box">
                 <img src="/ss-dolores.png" onerror="this.style.opacity='0'" alt="Pain Points Screenshot"/>
             </div>
         </div>
@@ -283,13 +293,59 @@
                     <h2 class="text-white" style="font-size: 2rem;">Cierre Híbrido Inmediato.</h2>
                 </div>
                 <div>
-                    <p class="text-light">Cerrar una venta B2B local requiere calor humano. Desarrollamos un embudo híbrido: un formulario robusto e inmersivo ("UI Premium") que en segundo plano enruta datos de forma segura al corporativo, y en la capa frontal dispara de inmediato la app de WhatsApp del prospecto. Esto dispara drásticamente las métricas de respuesta técnica y cierra el círculo de arquitectura Elite.</p>
+                    <p class="text-light">Cerrar una venta B2B / B2C local requiere calor humano. Desarrollamos un embudo híbrido: un formulario robusto e inmersivo ("UI Premium") que en segundo plano enruta datos de forma segura al corporativo, y en la capa frontal dispara de inmediato la app de WhatsApp del prospecto. Esto dispara drásticamente las métricas de respuesta técnica y cierra el círculo de la arquitectura Elite.</p>
                 </div>
             </div>
             
             <div class="screenshot-box screenshot-box-dark">
                 <img src="/ss-footer.png" onerror="this.style.opacity='0'" alt="Footer Screenshot"/>
             </div>
+        </div>
+    </div>
+
+    <!-- PAGE 9: 07 TECHNICAL AUDIT -->
+    <div class="page">
+        <div class="page-header">
+            <span>07 / Aseguramiento de Calidad</span>
+            <span>Arquitectura 2026</span>
+        </div>
+        <div class="content-wrap">
+            <div class="badge">QA & Performance Engine</div>
+            <h2 style="font-size: 2rem;">Desempeño y SEO Técnico.</h2>
+            <p>La belleza visual es inútil si el código subyacente es deficiente. Antes del despliegue, sometimos la infraestructura a una estricta <strong>Auditoría de Calidad Técnica</strong> (simulación Google Lighthouse) para garantizar indexación orgánica, accesibilidad y velocidad de carga extrema, superando los estándares promedio de la industria de seguridad en LATAM.</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 2rem;">
+                
+                <!-- Card 1 -->
+                <div style="background:var(--white); border: 1px solid var(--gray-light); padding: 25px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.02);">
+                    <div style="color:var(--accent); font-weight: 800; font-size: 1.2rem; margin-bottom: 0.5rem;">Localización & SEO Core</div>
+                    <p style="font-size: 0.9rem; margin-bottom: 0;">Reestructuración paramétrica del <code>&lt;html lang="es-MX"&gt;</code> e inyección de metadatatos geo-localizados para posicionar la plataforma de forma hiper-localizada en Monterrey, habilitando snippets ricos para búsquedas orgánicas.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div style="background:var(--white); border: 1px solid var(--gray-light); padding: 25px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.02);">
+                    <div style="color:var(--accent); font-weight: 800; font-size: 1.2rem; margin-bottom: 0.5rem;">Carga Asíncrona (LCP)</div>
+                    <p style="font-size: 0.9rem; margin-bottom: 0;">Inyección de técnicas Anti-Letterboxing y atributo de <code>poster</code> en Assets pesados. Esto anula el "efecto de pantalla negra", asegurando una interacción instantánea aún en redes 4G lentas u oficinas con mala conectividad.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div style="background:var(--white); border: 1px solid var(--gray-light); padding: 25px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.02);">
+                    <div style="color:var(--accent); font-weight: 800; font-size: 1.2rem; margin-bottom: 0.5rem;">Matriz de Accesibilidad (A11y)</div>
+                    <p style="font-size: 0.9rem; margin-bottom: 0;">Construcción del UI validada con arquitectura A11y. Cada campo táctil, etiqueta interactiva y target de botones excede la caja de 44x44px. Cero fricción en conversiones hechas mediante dispositivos móviles ("Fat-Finger Protocol").</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div style="background:var(--white); border: 1px solid var(--gray-light); padding: 25px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.02);">
+                    <div style="color:var(--accent); font-weight: 800; font-size: 1.2rem; margin-bottom: 0.5rem;">Integración Data-Layer</div>
+                    <p style="font-size: 0.9rem; margin-bottom: 0;">Aislamiento entre Frontend y Backend utilizando flujos silenciosos (Shadow Submit). Toda captura se resguarda en bases de datos con encriptación, y posteriormente dispara la micro-conversión rápida en la API de WhatsApp.</p>
+                </div>
+
+            </div>
+            
+            <div style="margin-top: auto; text-align: center; color: var(--gray); font-size: 0.8rem; letter-spacing: 1px; font-weight: 600; text-transform: uppercase;">
+                STATUS: DESPLIEGUE A PRODUCCIÓN COMPLETADO.
+            </div>
+            
         </div>
     </div>
 
