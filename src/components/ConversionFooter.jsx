@@ -83,8 +83,8 @@ export default function ConversionFooter() {
                   />
                 </div>
 
-                <div style={{ display: 'flex', gap: '1rem' }}>
-                  <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                  <div style={{ flex: '1 1 min(100%, 200px)', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                     <label style={{ fontSize: '0.85rem', color: '#475569', fontWeight: 600 }}>WhatsApp</label>
                     <input 
                       type="tel" 
@@ -96,7 +96,7 @@ export default function ConversionFooter() {
                     />
                   </div>
 
-                  <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                  <div style={{ flex: '1 1 min(100%, 200px)', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                     <label style={{ fontSize: '0.85rem', color: '#475569', fontWeight: 600 }}>Correo</label>
                     <input 
                       type="email" 

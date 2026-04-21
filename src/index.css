@@ -22,13 +22,14 @@
   padding: 0;
 }
 
-html, body {
+html, body, #root {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: var(--color-bg-dark);
   color: var(--color-text-main);
   line-height: 1.6;
   overflow-x: hidden;
   width: 100%;
+  position: relative;
 }
 
 /* Typography Scale */

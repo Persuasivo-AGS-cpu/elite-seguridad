@@ -158,6 +158,22 @@ export default function Products() {
           opacity: 1;
           gap: 1rem;
         }
+        .b2b-banner {
+          padding: 3rem;
+        }
+        .b2b-banner-btn {
+          white-space: nowrap;
+        }
+        @media (max-width: 768px) {
+          .b2b-banner {
+            padding: 1.5rem !important;
+            text-align: center;
+          }
+          .b2b-banner-btn {
+            white-space: normal !important;
+            width: 100%;
+          }
+        }
       `}} />
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
@@ -226,13 +242,13 @@ export default function Products() {
         </div>
 
         {/* Distributor B2B Banner */}
-        <div className="animate-fade-up delay-300" style={{ 
-          marginTop: '4rem', padding: '3rem', background: '#FFFFFF', 
+        <div className="animate-fade-up delay-300 b2b-banner" style={{ 
+          marginTop: '4rem', background: '#FFFFFF', 
           border: '1px solid rgba(0,45,114,0.08)', borderRadius: '24px', 
           display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', 
           gap: '2rem', boxShadow: '0 20px 40px rgba(0,45,114,0.03)' 
         }}>
-          <div style={{ flex: '1 1 500px' }}>
+          <div style={{ flex: '1 1 min(100%, 500px)' }}>
             <span style={{ color: 'var(--color-accent)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px', fontSize: '0.8rem', display: 'block', marginBottom: '0.5rem' }}>
               DISTRIBUCIÓN DIRECTA
             </span>
@@ -243,11 +259,11 @@ export default function Products() {
               Mostramos solo la punta del iceberg. Tenemos acceso preferencial e inventario completo de las marcas top mundiales (Hikvision, Ezviz, TP-Link, AccessPro) para licitaciones, corporativos o integraciones complejas.
             </p>
           </div>
-          <div>
+          <div style={{ flex: '1 1 auto', display: 'flex', justifyContent: 'center', width: '100%' }}>
             <a href="https://wa.me/528120295749?text=Hola!%20Tengo%20un%20proyecto%20especial%20y%20requiero%20revisar%20opciones%20del%20cat%C3%A1logo%20extendido%20como%20distribuidor." 
                target="_blank" rel="noreferrer" 
-               className="btn-primary" 
-               style={{ whiteSpace: 'nowrap', display: 'inline-block', padding: '1.2rem 2rem', fontSize: '1rem' }}
+               className="btn-primary b2b-banner-btn" 
+               style={{ display: 'inline-block', padding: '1.2rem 2rem', fontSize: '1rem', textAlign: 'center' }}
             >
               Consultar Catálogo de Ingeniería
             </a>
