@@ -212,7 +212,7 @@ export default function ConversionFooter() {
               <div style={{ height: '35px', overflow: 'visible', display: 'flex', alignItems: 'center' }}>
                 <img src="/shield-icon.png" alt="Elite Seguridad Seal" style={{ height: '100%', width: 'auto', objectFit: 'contain' }} />
               </div>
-              <p style={{ color: '#64748B', fontSize: '0.9rem', margin: 0 }}>© {new Date().getFullYear()} Elite Seguridad Corporativa.</p>
+              <p style={{ color: '#64748B', fontSize: '0.9rem', margin: 0 }}>© {new Date().getFullYear()} Elite Seguridad Corporativa. | Desarrollado por <a href="https://www.persuasivo.mx" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Persuasivo MKT</a></p>
             </div>
             <div style={{ display: 'flex', gap: '1.5rem' }}>
               <a href="https://www.facebook.com/share/17mZre6UKs/?mibextid=wwXIfr" target="_blank" rel="noreferrer" style={{ background: 'rgba(0,45,114,0.05)', padding: '0.5rem', borderRadius: '50%', color: 'var(--color-brand-blue)', transition: 'all 0.3s' }} onMouseOver={e=>{e.currentTarget.style.background='var(--color-accent)'; e.currentTarget.style.color='#FFF';}} onMouseOut={e=>{e.currentTarget.style.background='rgba(0,45,114,0.05)'; e.currentTarget.style.color='var(--color-brand-blue)';}}>
